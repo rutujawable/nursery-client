@@ -12,7 +12,7 @@ function Home() {
    const [plants,setPlants] =   useState([])
    const loadPlants = async ()=>{
     toast.loading("plants loading")
-    const response = await axios.get("http://localhost:8000/plants")
+    const response = await axios.get("https://student-server-s4aq.onrender.com")
     setPlants(response.data.data)
     toast.dismiss()
     toast.success("plants loaded successfully")
