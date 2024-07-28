@@ -4,6 +4,8 @@ import "./Home.css"
 import { useState } from 'react'
 import axios from 'axios'
 import toast , { Toaster } from 'react-hot-toast'
+import plus from "./plus.png"
+import { Link } from 'react-router-dom'
 
 
 function Home() {
@@ -35,14 +37,23 @@ function Home() {
                  cateogary,
                  price,
                  height,
-                 color
+                 color,
+                 image
               } = plant;
               
-              return <PlantCard key={i} name={name} id ={_id} cateogary={cateogary} price={price} height={height} color={color}/>
+              return <PlantCard key={i} 
+              name={name}
+               id ={_id}  image={image}
+                cateogary={cateogary} price={price} height={height} color={color}
+                loadPlants={loadPlants}/>
 
             })
           }
             <Toaster/>
+            <Link to="/addplant">
+            
+              <img src={plus} className='img'></img>
+              </Link>
 
           </div>
         )

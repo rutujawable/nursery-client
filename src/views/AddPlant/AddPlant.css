@@ -1,0 +1,29 @@
+
+.plant_input{
+    display: block;
+    margin: 20px;
+    width:  200px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.btn{
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.form{
+     justify-content: center;
+     display: flex;
+    
+}
+.title{
+    text-align: center;
+}
+.plant_img{
+    height: 100px;
+}

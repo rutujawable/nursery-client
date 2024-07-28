@@ -1,3 +1,12 @@
 .plant{
     text-align: center;
 }
+
+.img{
+    height: 50px;
+    position: fixed;
+    right: 280px;
+    bottom: 10px;
+    z-index: 10px;
+    
+}
