@@ -1,0 +1,186 @@
+
+/* .plant_input{
+    display: block;
+    margin: 20px;
+    width:  200px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.btn{
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.form{
+     justify-content: center;
+     display: flex;
+    
+}
+.title{
+    text-align: center;
+}
+.plant_img{
+    height: 100px;
+} */
+
+
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  /* Update Plant Page Styling */
+  .update-plant-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+  }
+  
+  .update-plant-header {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Form Input Fields */
+  .plant_input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fafafa;
+    color: #333;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .plant_input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    background-color: #fff;
+  }
+  
+  .plant_input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  
+  .plant_input[type="number"]::-webkit-outer-spin-button,
+  .plant_input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Image Styling */
+  .plant_img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Button Styling */
+  .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Link Styling */
+  .title {
+    display: inline-block;
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  .title:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .update-plant-container {
+      padding: 25px;
+    }
+  
+    .update-plant-header {
+      font-size: 1.6rem;
+    }
+  
+    .btn {
+      font-size: 1.1rem;
+    }
+  
+    .plant_input {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .update-plant-container {
+      padding: 15px;
+    }
+  
+    .update-plant-header {
+      font-size: 1.3rem;
+    }
+  
+    .btn {
+      font-size: 1rem;
+    }
+  
+    .plant_input {
+      font-size: 0.95rem;
+    }
+  
+    .plant_img {
+      max-width: 100%;
+    }
+  }
+  

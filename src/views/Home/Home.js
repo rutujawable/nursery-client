@@ -1,72 +1,73 @@
-import React, { useEffect } from 'react'
-import  PlantCard from "./../../components/PlantCard/PlantCard"
-import "./Home.css"
-import { useState } from 'react'
-import axios from 'axios'
-import toast , { Toaster } from 'react-hot-toast'
-import plus from "./plus.png"
-import { Link } from 'react-router-dom'
 
+import React, { useEffect, useState } from 'react';
+import PlantCard from "./../../components/PlantCard/PlantCard";
+import "./Home.css";
+import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
+import plus from "./plus.png";
+import { Link } from 'react-router-dom';
 
 function Home() {
+  const [plants, setPlants] = useState([]);
 
-   
-   const [plants,setPlants] =   useState([])
-   const loadPlants = async ()=>{
-    toast.loading("plants loading")
-    const response = await axios.get(`${process.env.REACT_APP_API_URL}/plants`)
-    setPlants(response.data.data)
-    toast.dismiss()
-    toast.success("plants loaded successfully")
-   }
-        
-    useEffect(()=>{
+  const loadPlants = async () => {
+    toast.loading("Plants loading...");
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/plants`);
+      setPlants(response.data.data);
+      toast.dismiss();
+      toast.success("Plants loaded successfully!");
+    } catch (error) {
+      toast.dismiss();
+      toast.error("Failed to load plants.");
+    }
+  };
 
-      loadPlants()
-    }, [])
+  useEffect(() => {
+    loadPlants();
+  }, []);
 
-        return (
-          <div>
-            <h1 className='plant'>Plants</h1>
+  return (
+    <div className="home-container">
+      <h1 className="plant">Plants</h1>
 
-          {
-             plants.map((plant,i)=>{
-              const {
-                 _id,
-                 name,
-                 cateogary,
-                 price,
-                 height,
-                 color,
-                 image
-              } = plant;
-              
-              return <PlantCard key={i} 
-              name={name}
-               id ={_id}  image={image}
-                cateogary={cateogary} price={price} height={height} color={color}
-                loadPlants={loadPlants}/>
+      <div className="plant-cards-container">
+        {
+          plants.map((plant, i) => {
+            const {
+              _id,
+              name,
+              cateogary,
+              price,
+              height,
+              color,
+              image
+            } = plant;
 
-            })
-          }
-            <Toaster/>
-            <Link to="/addplant">
-            
-              <img src={plus} className='img'></img>
-              </Link>
+            return (
+              <PlantCard
+                key={i}
+                name={name}
+                id={_id}
+                image={image}
+                cateogary={cateogary}
+                price={price}
+                height={height}
+                color={color}
+                loadPlants={loadPlants}
+              />
+            );
+          })
+        }
+      </div>
 
-          </div>
-        )
+      <Toaster />
 
-        
-
-
-
-
-
-
-    
-  
+      <Link to="/addplant" className="link-add-plant">
+        <img src={plus} alt="Add Plant" className="img" />
+      </Link>
+    </div>
+  );
 }
 
 export default Home;

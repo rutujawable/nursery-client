@@ -1,5 +1,5 @@
-.plant{
-    text-align: center;
+/* .plant{
+    justify-content: center;
 }
 
 .img{
@@ -9,4 +9,201 @@
     bottom: 10px;
     z-index: 10px;
     
-}
+} */
+
+
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Home Page Styles */
+  .home-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .plant {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .plant-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Automatically adjusts the number of columns based on screen size */
+    gap: 20px; /* Space between cards */
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  /* Link for Add Plant Button */
+  .link-add-plant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Plant Card Styles */
+  .plant-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .plant-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .plant-card-content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .plant-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .plant-info {
+    margin-top: 15px;
+  }
+  
+  .plant-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .plant-category,
+  .plant-price,
+  .plant-height,
+  .plant-color {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .plant-actions {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    width: 100%;
+  }
+  
+  .btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .update-btn {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .update-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #e53935;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .plant-cards-container {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Allow for fewer columns on medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .plant-cards-container {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 2-3 cards per row */
+    }
+  
+    .plant-name {
+      font-size: 1.2rem; /* Smaller text size for mobile */
+    }
+  
+    .plant-category,
+    .plant-price,
+    .plant-height,
+    .plant-color {
+      font-size: 0.9rem;
+    }
+  
+    .img {
+      width: 50px; /* Adjust image size for mobile */
+      height: 50px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .plant-cards-container {
+      grid-template-columns: 1fr; /* Single column for very small screens */
+    }
+  
+    .plant-name {
+      font-size: 1rem; /* Further reduce font size */
+    }
+  
+    .plant-category,
+    .plant-price,
+    .plant-height,
+    .plant-color {
+      font-size: 0.8rem;
+    }
+  
+    .img {
+      width: 45px; /* Further adjust image size for smaller devices */
+      height: 45px;
+    }
+  }
+  
